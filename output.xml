@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.3 on win32)" generated="20230710 22:23:36.010" rpa="false" schemaversion="4">
+<suite id="s1" name="Task14" source="C:\Users\msi\PycharmProjects\pythonProject11\automation\RobotFiles\task14.robot">
+<kw name="open authpage" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230710 22:23:36.182" level="INFO">Opening browser 'Chrome' to base url 'https://www.google.com'.</msg>
+<status status="PASS" starttime="20230710 22:23:36.182" endtime="20230710 22:23:41.193"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>xpath://*[@id="APjFqb"]</arg>
+<arg>amazon</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230710 22:23:41.194" level="INFO">Typing text 'amazon' into text field 'xpath://*[@id="APjFqb"]'.</msg>
+<status status="PASS" starttime="20230710 22:23:41.193" endtime="20230710 22:23:41.255"/>
+</kw>
+<kw name="Submit Form" library="Selenium2Library">
+<doc>Submits a form identified by ``locator``.</doc>
+<msg timestamp="20230710 22:23:41.255" level="INFO">Submitting form 'None'.</msg>
+<status status="PASS" starttime="20230710 22:23:41.255" endtime="20230710 22:23:41.614"/>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<arg>amazon</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230710 22:23:41.614" endtime="20230710 22:23:47.293"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230710 22:23:47.293" endtime="20230710 22:23:47.408"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>xpath://a[contains(@href, 'amazon') and .//h3]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230710 22:23:47.408" level="INFO">Clicking element 'xpath://a[contains(@href, 'amazon') and .//h3]'.</msg>
+<status status="PASS" starttime="20230710 22:23:47.408" endtime="20230710 22:23:56.299"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>id=nav-orders</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230710 22:23:56.299" level="INFO">Clicking element 'id=nav-orders'.</msg>
+<status status="PASS" starttime="20230710 22:23:56.299" endtime="20230710 22:23:58.932"/>
+</kw>
+<kw name="Click Link" library="Selenium2Library">
+<arg>id=createAccountSubmit</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230710 22:23:58.932" level="INFO">Clicking link 'id=createAccountSubmit'.</msg>
+<status status="PASS" starttime="20230710 22:23:58.932" endtime="20230710 22:24:01.603"/>
+</kw>
+<status status="PASS" starttime="20230710 22:23:36.182" endtime="20230710 22:24:01.603"/>
+</kw>
+<test id="s1-t1" name="valid authentification" line="14">
+<kw name="Input Text" library="Selenium2Library">
+<arg>id=ap_customer_name</arg>
+<arg>nesrine</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230710 22:24:01.605" level="INFO">Typing text 'nesrine' into text field 'id=ap_customer_name'.</msg>
+<status status="PASS" starttime="20230710 22:24:01.605" endtime="20230710 22:24:01.667"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id=ap_email</arg>
+<arg>msaedn12@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230710 22:24:01.668" level="INFO">Typing text 'msaedn12@gmail.com' into text field 'id=ap_email'.</msg>
+<status status="PASS" starttime="20230710 22:24:01.668" endtime="20230710 22:24:01.744"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id=ap_password</arg>
+<arg>333333</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230710 22:24:01.744" level="INFO">Typing text '333333' into text field 'id=ap_password'.</msg>
+<status status="PASS" starttime="20230710 22:24:01.744" endtime="20230710 22:24:01.811"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>id=ap_password_check</arg>
+<arg>333333</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230710 22:24:01.811" level="INFO">Typing text '333333' into text field 'id=ap_password_check'.</msg>
+<status status="PASS" starttime="20230710 22:24:01.811" endtime="20230710 22:24:01.886"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>id=continue</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230710 22:24:01.887" level="INFO">Clicking button 'id=continue'.</msg>
+<status status="PASS" starttime="20230710 22:24:01.886" endtime="20230710 22:24:05.052"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.open('www.google.com');</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230710 22:24:05.053" level="INFO">Executing JavaScript:
+window.open('www.google.com');
+Without any arguments.</msg>
+<status status="PASS" starttime="20230710 22:24:05.053" endtime="20230710 22:24:05.075"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230710 22:24:35.076" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20230710 22:24:05.076" endtime="20230710 22:24:35.076"/>
+</kw>
+<status status="PASS" starttime="20230710 22:24:01.603" endtime="20230710 22:24:35.076"/>
+</test>
+<kw name="Close Browser" library="Selenium2Library" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230710 22:24:35.077" endtime="20230710 22:24:37.189"/>
+</kw>
+<status status="PASS" starttime="20230710 22:23:36.010" endtime="20230710 22:24:37.189"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Task14">Task14</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
