@@ -29,7 +29,7 @@ open authpage
     Submit Form
     Wait Until Page Contains    amazon
     Maximize Browser Window
-    Click Element    xpath://a[contains(@href, 'amazon') and .//h3]
+    Click link    xpath://*[@id="rso"]/div[1]/div/div/div/div/div/div/div/div[1]/a
     Click Element    id=nav-orders
     click link    id=createAccountSubmit
 
