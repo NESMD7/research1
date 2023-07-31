@@ -17,7 +17,7 @@ ${DBPort}         3306
 ${DBUser}         root
 
 
-${csvfile}       C:/Users/msi/PycharmProjects/pythonProject11/automation2/TestApi/CsvData/invalidUserData.csv
+${csvfile}       C:/Users/msi/PycharmProjects/pythonProject11/automation2/TestApi/CsvData/ValidDataUse.csv
 ${url}      http://localhost:8888
 *** Test Cases ***
 
@@ -30,21 +30,21 @@ Successfull signUp
 
     # read data from CSV and insert into the table
     @{userData}=    Read CSV File To List    ${csvfile}
-    FOR     ${row}  IN       @{userData}
-        ${userName}         Set Variable    ${row[0]}
-        ${userFirstName}    Set Variable    ${row[1]}
-        ${userLastName}     Set Variable    ${row[2]}
-        ${userPassword}     Set Variable    ${row[3]}
-        ${phone}            Set Variable    ${row[4]}
-        ${sectionName}      Set Variable    ${row[5]}
-        Log To Console      ${row}
+
+        ${userName}         Set Variable    ${userData[0][0]}
+        ${userFirstName}    Set Variable    ${userData[0][1]}
+        ${userLastName}     Set Variable    ${userData[0][2]}
+        ${userPassword}     Set Variable    ${userData[0][3]}
+        ${phone}            Set Variable    ${userData[0][4]}
+        ${sectionName}      Set Variable    ${userData[0][5]}
+
 
         ${body}=            Create Dictionary  userName=${userName}  userFirstName=${userFirstName}  userLastName=${userLastName}  userPassword=${userPassword}  phone=${phone}  sectionName=${sectionName}
         Log To Console      ${body}
         ${resp}=            POST  ${url}/registerNewUser  json=${body}
         Status Should Be    200                   ${resp}
         Log To Console      ${resp}
-    END
+
     Execute SQL String    INSERT INTO `users` (userName, userFirstName, userLastName, userPassword, phone, sectionName) VALUES ('${userName}', '${userFirstName}', '${userLastName}', '${userPassword}', ${phone}, '${sectionName}')
 
 
